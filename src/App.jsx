@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './App.css';
-import ComplexFormWithUseReducer from './exercises/ComplexFormWithUseReducer';
+import TodoListWithUseReducer from './exercises/TodoListWithUseReducer';
 
 function App() {
     const [toggle, setToggle] = useState(false);
@@ -8,7 +8,7 @@ function App() {
     return (
         <>
             <button onClick={() => setToggle(!toggle)}>Toggle</button>
-            {toggle && <ComplexFormWithUseReducer/>}
+            {toggle && <TodoListWithUseReducer/>}
         </>
     );
 }
