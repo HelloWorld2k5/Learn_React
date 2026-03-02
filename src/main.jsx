@@ -2,6 +2,7 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
+import AuthProvider from './exercises/context/AuthContext.jsx'
 
 console.log('HELLO EVERYONE, WELCOME TO MY REACT APP! HAPPY NEW YEAR 2026!');
 
@@ -19,6 +20,8 @@ console.log('HELLO EVERYONE, WELCOME TO MY REACT APP! HAPPY NEW YEAR 2026!');
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <App />
+    <AuthProvider>
+      <App />
+    </AuthProvider>
   </StrictMode>,
 )

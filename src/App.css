@@ -25,3 +25,8 @@
     cursor: pointer;
     margin-left: 5px;
 }
+
+.header.dark, .btn-theme.dark {
+    background-color: #000;
+    color: #fff;
+}
