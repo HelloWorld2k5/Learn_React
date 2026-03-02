@@ -3,72 +3,72 @@ import { useReducer } from "react";
 // Initial useState
 const initialState = {
     count: 0,
-    step: 0
+    step: 0,
 };
 
 // Actions
-const INCREMENT = 'increment';
-const DECREMENT = 'decrement';
-const SET_STEP = 'set_step';
-const RESET = 'reset';
+const INCREMENT = "increment";
+const DECREMENT = "decrement";
+const SET_STEP = "set_step";
+const RESET = "reset";
 
-const increment = payload => {
+const increment = (payload) => {
     return {
         type: INCREMENT,
-        payload
-    }
+        payload,
+    };
 };
 
-const decrement = payload => {
+const decrement = (payload) => {
     return {
         type: DECREMENT,
-        payload
+        payload,
     };
-}
-
-const setStep = payload => {
-    return {
-        type: SET_STEP,
-        payload
-    }
 };
 
-const reset = payload => {
+const setStep = (payload) => {
+    return {
+        type: SET_STEP,
+        payload,
+    };
+};
+
+const reset = (payload) => {
     return {
         type: RESET,
-        payload
-    }
-}
+        payload,
+    };
+};
 
-// Reducer 
+// Reducer
 const reducer = (state, action) => {
-    console.log('Prev state: ', state);
-    console.log('Action: ', action);
+    console.log("Prev state: ", state);
+    console.log("Action: ", action);
 
-    switch(action.type) {
+    switch (action.type) {
         case INCREMENT:
             return {
                 ...state,
-                count: state.count + action.payload
-            }
+                count: state.count + action.payload,
+            };
         case DECREMENT:
             return {
                 ...state,
-                count: state.count - action.payload
-            }
+                count: state.count - action.payload,
+            };
         case SET_STEP:
             return {
                 ...state,
-                step: action.payload
-            }
+                step: action.payload,
+            };
         case RESET:
             return {
                 ...state,
                 count: action.payload.count,
-                step: action.payload.step
-            }
+                step: action.payload.step,
+            };
         default:
-            throw new Error('Invalid action!');
+            throw new Error("Invalid action!");
     }
 };
 
@@ -77,7 +77,8 @@ function CounterProWithUseReducer() {
     const { count, step } = state;
 
     const handleChange = (e) => {
-        const stepp = e.target.value.trim() === '' ? 0 : parseInt(e.target.value);
+        const stepp =
+            e.target.value.trim() === "" ? 0 : parseInt(e.target.value);
 
         dispatch(setStep(stepp));
     };
@@ -96,7 +97,12 @@ function CounterProWithUseReducer() {
 
     return (
         <div>
-            <input value={step} onChange={handleChange} type="text" placeholder="Enter step..."/>
+            <input
+                value={step}
+                onChange={handleChange}
+                type="text"
+                placeholder="Enter step..."
+            />
             <p>{count}</p>
             <button onClick={handleIncrease}>Increase</button>
             <button onClick={handleDecrease}>Decrease</button>

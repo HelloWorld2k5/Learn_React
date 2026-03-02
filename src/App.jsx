@@ -1,6 +1,6 @@
-import { useState } from 'react';
-import './App.css';
-import AuthenticationFlow from './exercises/AuthenticationFlow';
+import { useState } from "react";
+import "./App.css";
+import AuthenticationFlow from "./exercises/AuthenticationFlow";
 
 function App() {
     const [toggle, setToggle] = useState(false);
@@ -8,7 +8,7 @@ function App() {
     return (
         <>
             <button onClick={() => setToggle(!toggle)}>Toggle</button>
-            {toggle && <AuthenticationFlow/>}
+            {toggle && <AuthenticationFlow />}
         </>
     );
 }

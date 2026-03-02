@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from "react";
 // Focus input, check old value
 
 function FocusInput() {
-    const [username, setUsername] = useState('');
+    const [username, setUsername] = useState("");
     const inputRef = useRef(null);
     const prevUsername = useRef(null);
 
@@ -19,7 +19,12 @@ function FocusInput() {
 
     return (
         <>
-            <input type="text" ref={inputRef} value={username} onChange={(e) => setUsername(e.target.value.trim())}/>
+            <input
+                type="text"
+                ref={inputRef}
+                value={username}
+                onChange={(e) => setUsername(e.target.value.trim())}
+            />
             <p>Tên hiện tại: {username}</p>
             <p>Tên trước đó: {prevUsername.current}</p>
         </>

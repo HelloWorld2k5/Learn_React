@@ -8,8 +8,8 @@ function AuthProvider({ children }) {
 
     const handleLogin = () => {
         setUser({
-            name: 'Lệ Phi Vũ',
-            email: 'lehuynh@gmail.com'
+            name: "Lệ Phi Vũ",
+            email: "lehuynh@gmail.com",
         });
 
         setIsAuthenticated(true);
@@ -24,13 +24,11 @@ function AuthProvider({ children }) {
         user,
         isAuthenticated,
         handleLogin,
-        handleLogout
-    }
+        handleLogout,
+    };
 
     return (
-        <AuthContext.Provider value={value}>
-            {children}
-        </AuthContext.Provider>
+        <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
     );
 }
 

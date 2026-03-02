@@ -2,11 +2,9 @@ import { useState, memo } from "react";
 
 // Bọc Content trong memo để không bị re-render ko cần thiết
 const Content = memo(() => {
-    console.log('Content được render!');
+    console.log("Content được render!");
 
-    return (
-        <h1>Content component</h1>
-    );
+    return <h1>Content component</h1>;
 });
 
 function PreventUnnecessaryRender() {

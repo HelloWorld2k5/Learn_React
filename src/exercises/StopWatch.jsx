@@ -7,33 +7,33 @@ function StopWatch() {
     useEffect(() => {
         return () => {
             clearInterval(timerIdRef.current);
-            console.log('Clear interval khi unmount')
-        }
+            console.log("Clear interval khi unmount");
+        };
     }, []);
 
     const handleStart = () => {
-        console.log('Set interval');
+        console.log("Set interval");
         timerIdRef.current = setInterval(() => {
-            setMinute(prev => {
+            setMinute((prev) => {
                 const nextValue = prev - 1;
                 if (nextValue <= 0) {
                     clearInterval(timerIdRef.current);
                     return 0;
                 }
 
-                return nextValue
-            })
+                return nextValue;
+            });
         }, 1000);
     };
 
     const handleStop = () => {
         clearInterval(timerIdRef.current);
-        console.log('Clear interval khi dung');
+        console.log("Clear interval khi dung");
     };
 
     const handleReset = () => {
         clearInterval(timerIdRef.current);
-        console.log('Clear interval khi dat lai');
+        console.log("Clear interval khi dat lai");
         setMinute(0);
     };
 

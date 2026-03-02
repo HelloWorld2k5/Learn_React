@@ -3,24 +3,24 @@ import { useState, useEffect } from "react";
 function MouseTracker() {
     const [coordinate, setCoordinate] = useState({
         x: 0,
-        y: 0
+        y: 0,
     });
 
     useEffect(() => {
         const handleMoveMouse = (e) => {
             setCoordinate({
                 x: e.clientX,
-                y: e.clientY
+                y: e.clientY,
             });
-        }
+        };
 
-        window.addEventListener('mousemove', (e) => handleMoveMouse(e));
-        console.log('Đã add listener');
+        window.addEventListener("mousemove", (e) => handleMoveMouse(e));
+        console.log("Đã add listener");
 
         return () => {
-            window.removeEventListener('mousemove', (e) => handleMoveMouse(e));
-            console.log('Đã remove listener');
-        }
+            window.removeEventListener("mousemove", (e) => handleMoveMouse(e));
+            console.log("Đã remove listener");
+        };
     }, []);
 
     return (

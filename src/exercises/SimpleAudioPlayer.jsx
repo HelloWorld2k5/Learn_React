@@ -20,9 +20,13 @@ function SimpleAudioPlayer() {
                 ref={audioRef}
                 src="../audio.m4a"
                 controls
-                onTimeUpdate={(e) => setCurrentTime(Math.floor(e.target.currentTime))}>
-            </audio>
-            <button onClick={() => setIsPlaying(!isPlaying)}>{isPlaying ? 'Dừng nhạc' : 'Phát nhạc'}</button>
+                onTimeUpdate={(e) =>
+                    setCurrentTime(Math.floor(e.target.currentTime))
+                }
+            ></audio>
+            <button onClick={() => setIsPlaying(!isPlaying)}>
+                {isPlaying ? "Dừng nhạc" : "Phát nhạc"}
+            </button>
         </>
     );
 }
