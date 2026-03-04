@@ -40,9 +40,7 @@ const reducer = (state, action) => {
             return {
                 ...state,
                 total: state.total - action.payload.price,
-                cart: state.cart.filter(
-                    (item) => item.id !== action.payload.id,
-                ),
+                cart: state.cart.filter((item) => item.id !== action.payload.id),
             };
         case ACTIONS.UPDATE_QUANTITY: {
             // Cập nhật số lượng của từng sản phẩm
@@ -119,9 +117,9 @@ function ShoppingCartWithUseReducer() {
         dispatch({ type: ACTIONS.ADD_TO_CART, payload: product });
     };
 
-    const handleRemoveFromCart = (id, price) => {
+    const handleRemoveFromCart = (id, price, quantity) => {
         // Xoá 1 sản phẩm khỏi giỏ
-        dispatch({ type: ACTIONS.REMOVE_FROM_CART, payload: { id, price } });
+        dispatch({ type: ACTIONS.REMOVE_FROM_CART, payload: { id, price, quantity } });
     };
 
     const handleUpdateQuantity = (id, amount) => {
@@ -152,22 +150,17 @@ function ShoppingCartWithUseReducer() {
                 {cart.map((item) => (
                     <li key={item.id}>
                         <span>
-                            {item.name}, giá: {item.price} (số lượng:{" "}
-                            {item.quantity})
+                            {item.name}, giá: {item.price} (số lượng: {item.quantity})
                         </span>
-                        <button
-                            onClick={() => handleUpdateQuantity(item.id, 1)}
-                        >
+                        <button onClick={() => handleUpdateQuantity(item.id, 1)}>
                             +
                         </button>
-                        <button
-                            onClick={() => handleUpdateQuantity(item.id, -1)}
-                        >
+                        <button onClick={() => handleUpdateQuantity(item.id, -1)}>
                             -
                         </button>
                         <button
                             onClick={() =>
-                                handleRemoveFromCart(item.id, item.price)
+                                handleRemoveFromCart(item.id, item.price, item.quantity)
                             }
                         >
                             Xoá khỏi giỏ hàng
