@@ -2,8 +2,8 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
-import CartProvider from './exercises/context/CartContext.jsx'
 
+import { StoreProvider } from './store';
 console.log('HELLO EVERYONE, WELCOME TO MY REACT APP! HAPPY NEW YEAR 2026!');
 
 // function emitComment(id) {
@@ -20,8 +20,8 @@ console.log('HELLO EVERYONE, WELCOME TO MY REACT APP! HAPPY NEW YEAR 2026!');
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <CartProvider>
+    <StoreProvider>
       <App />
-    </CartProvider>
+    </StoreProvider>
   </StrictMode>,
 )
