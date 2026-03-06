@@ -31,3 +31,23 @@
     background-color: #000;
     color: #fff;
 }
+
+.box {
+    width: 40px;
+    height: 40px;
+    background-color: #4ed4fc;
+}
+
+.shake {
+    animation: shake 0.5s linear alternate infinite;
+}
+
+@keyframes shake {
+    0% {
+        transform: rotate(0deg);
+    } 50% {
+        transform: rotate(45deg);
+    } 100% {
+        transform: rotate(-90deg);
+    }
+}
