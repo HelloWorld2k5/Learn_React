@@ -1,10 +1,8 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.jsx'
-
-import { StoreProvider } from './store';
-console.log('HELLO EVERYONE, WELCOME TO MY REACT APP! HAPPY NEW YEAR 2026!');
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import "./index.css";
+import App from "./App.jsx";
+console.log("HELLO EVERYONE, WELCOME TO MY REACT APP! HAPPY NEW YEAR 2026!");
 
 // function emitComment(id) {
 //   setInterval(() => {
@@ -18,10 +16,8 @@ console.log('HELLO EVERYONE, WELCOME TO MY REACT APP! HAPPY NEW YEAR 2026!');
 // emitComment(2);
 // emitComment(3);
 
-createRoot(document.getElementById('root')).render(
+createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <StoreProvider>
-      <App />
-    </StoreProvider>
+    <App />
   </StrictMode>,
-)
+);
