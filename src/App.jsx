@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./App.css";
-import SmartInput from "./exercises/SmartInput";
+import RemoteControl from "./exercises/RemoteControl";
 
 function App() {
     const [toggle, setToggle] = useState(false);
@@ -8,7 +8,7 @@ function App() {
     return (
         <>
             <button onClick={() => setToggle(!toggle)}>Toggle</button>
-            {toggle && <SmartInput />}
+            {toggle && <RemoteControl />}
         </>
     );
 }
