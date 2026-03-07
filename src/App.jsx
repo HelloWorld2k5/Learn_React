@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./App.css";
-import UseToggleWithCustomHook from "./exercises/UseToggleWithCustomHook";
+import UseLocalStorageWithCustomHook from "./exercises/UseLocalStorageWithCustomHook";
 
 function App() {
     const [toggle, setToggle] = useState(false);
@@ -8,7 +8,7 @@ function App() {
     return (
         <>
             <button onClick={() => setToggle(!toggle)}>Toggle</button>
-            {toggle && <UseToggleWithCustomHook />}
+            {toggle && <UseLocalStorageWithCustomHook />}
         </>
     );
 }
