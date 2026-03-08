@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./App.css";
-import UseFetchWithCustomHook from "./exercises/UseFetchWithCustomHook";
+import UseDebounceWithCustomHook from "./exercises/UseDebounceWithCustomHook";
 
 function App() {
     const [toggle, setToggle] = useState(false);
@@ -8,7 +8,7 @@ function App() {
     return (
         <>
             <button onClick={() => setToggle(!toggle)}>Toggle</button>
-            {toggle && <UseFetchWithCustomHook />}
+            {toggle && <UseDebounceWithCustomHook />}
         </>
     );
 }
