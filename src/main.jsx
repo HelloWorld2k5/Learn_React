@@ -17,7 +17,7 @@ console.log("HELLO EVERYONE, WELCOME TO MY REACT APP! HAPPY NEW YEAR 2026!");
 // emitComment(3);
 
 createRoot(document.getElementById("root")).render(
-  <StrictMode>
+  // <StrictMode>
     <App />
-  </StrictMode>,
+  // </StrictMode>,
 );

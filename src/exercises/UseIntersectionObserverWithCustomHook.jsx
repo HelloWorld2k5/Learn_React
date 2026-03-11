@@ -30,13 +30,18 @@ const useFetch = (url) => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        fetch(url)
+        // Dùng abort controller để tránh việc mem leak khi component bị unmount khi chưa fetch xong
+        const controller = new AbortController();
+        fetch(url, { signal: controller.signal })
             .then((res) => {
                 if (!res.ok) throw new Error("Cant get data from API");
                 return res.json();
             })
             .then((data) => setData(data))
-            .catch((error) => console.log(error.message));
+            .catch((error) => console.log(error.message))
+            .finally(() => console.log('Fetch xong!'));
+
+        return () => controller.abort();
     }, [url]);
 
     return data;
@@ -58,7 +63,7 @@ function UseIntersectionObserverWithCustomHook() {
     const isIntersecting = useIntersectionObserver(setinalRef, options);
 
     useEffect(() => {
-        if (!isIntersecting) return;
+        if (!isIntersecting || point === posts.length) return;
 
         const timerId = setTimeout(() => {
             setPoint(prev => {
@@ -69,7 +74,7 @@ function UseIntersectionObserverWithCustomHook() {
         }, 1500);
 
         return () => clearTimeout(timerId);
-    }, [isIntersecting, posts.length, point]);
+    }, [isIntersecting, posts.length]);
 
     console.log('re-render');
 
@@ -83,7 +88,7 @@ function UseIntersectionObserverWithCustomHook() {
             {/* Setinal không bị unmount mà chỉ thêm các items phía trên */}
             {/* ref.current vẫn là node setinal cũ mỗi khi thêm các items mới */}
             <div ref={setinalRef} className="setinal">
-                Đang tải thêm...
+                {point === posts.length ? 'Hết rồi' : 'Đang tải thêm...'}
             </div>
         </>
     );
