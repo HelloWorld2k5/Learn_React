@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./App.css";
-import StyledMenu from "./exercises/StyledMenu";
+import FollowMousePosition from "./exercises/FollowMousePosition";
 import ThemeProvider from "./exercises/context/ThemeContext";
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
     return (
         <ThemeProvider>
             <button onClick={() => setToggle(!toggle)}>Toggle</button>
-            {toggle && <StyledMenu />}
+            {toggle && <FollowMousePosition />}
         </ThemeProvider>
     );
 }

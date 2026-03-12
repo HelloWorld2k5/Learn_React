@@ -116,3 +116,13 @@
     color: #fff;
     background-color: #000;
 }
+
+.circle-cursor {
+    width: 10px;
+    height: 10px;
+    background-color: #FFD372;
+    border-radius: 50%; /* thành hình tròn */
+    position: fixed; /* fixed để set toạ độ cho hình tròn đâu cũng được */
+    pointer-events: none; /* tránh chặn click */
+    transform: translate(-50%, -50%); /* di chuyển hình tròn lên trên trái 1 chút cho trùng với mũi con chuột */
+}
