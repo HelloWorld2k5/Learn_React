@@ -87,3 +87,32 @@
 .dropdown-content a:hover {
     background-color: #ddd;
 }
+
+.router {
+    margin: 0;
+    padding: 0;
+    background-color: #f1f1f1;
+    width: 200px;
+}
+
+.router a {
+    display: block;
+    color: #000;
+    text-decoration: none;
+    padding: 8px 16px;
+}
+
+.router a:hover {
+    background-color: #5555;
+}
+
+.router a.active {
+    background-color: #3BA96C;
+    color: #fff;
+}
+
+
+.home.dark, .setting.dark {
+    color: #fff;
+    background-color: #000;
+}

@@ -6,6 +6,7 @@ function ThemeProvider({ children }) {
     const [theme, setTheme] = useState("light");
 
     const toggleTheme = () => {
+        console.log('toggle theme');
         setTheme(theme === "light" ? "dark" : "light");
     };
 
