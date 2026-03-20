@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./App.css";
-import CountDownRouting from "./exercises/CountDownRouting";
+import PageTitleWithRouting from "./exercises/PageTitleWithRouting";
 import ThemeProvider from "./exercises/context/ThemeContext";
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
     return (
         <ThemeProvider>
             <button onClick={() => setToggle(!toggle)}>Toggle</button>
-            {toggle && <CountDownRouting />}
+            {toggle && <PageTitleWithRouting />}
         </ThemeProvider>
     );
 }
