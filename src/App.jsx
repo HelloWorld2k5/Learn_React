@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./App.css";
-import PageTitleWithRouting from "./exercises/PageTitleWithRouting";
+import SimulationLoginFlow from "./exercises/SimulationLoginFlow";
 import ThemeProvider from "./exercises/context/ThemeContext";
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
     return (
         <ThemeProvider>
             <button onClick={() => setToggle(!toggle)}>Toggle</button>
-            {toggle && <PageTitleWithRouting />}
+            {toggle && <SimulationLoginFlow />}
         </ThemeProvider>
     );
 }
