@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { Link, Routes, Route, useParams, useSearchParams } from "react-router-dom";
+import { Link, Routes, Route, useSearchParams } from "react-router-dom";
 
 const products = [
     {
