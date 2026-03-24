@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./App.css";
-import SimulationLoginFlow from "./exercises/SimulationLoginFlow";
+import BookLibraryWithRouting from "./exercises/BookLibraryWithRouting";
 import ThemeProvider from "./exercises/context/ThemeContext";
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
     return (
         <ThemeProvider>
             <button onClick={() => setToggle(!toggle)}>Toggle</button>
-            {toggle && <SimulationLoginFlow />}
+            {toggle && <BookLibraryWithRouting />}
         </ThemeProvider>
     );
 }
